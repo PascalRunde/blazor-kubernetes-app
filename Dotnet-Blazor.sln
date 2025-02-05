@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet-Blazor.AppHost", "Dotnet-Blazor.AppHost\Dotnet-Blazor.AppHost.csproj", "{C8829021-9B06-4786-9AED-26FBFD9842ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet-Blazor.ServiceDefaults", "Dotnet-Blazor.ServiceDefaults\Dotnet-Blazor.ServiceDefaults.csproj", "{3054F33D-9439-4350-9B91-693BF0640178}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet-Blazor.ApiService", "Dotnet-Blazor.ApiService\Dotnet-Blazor.ApiService.csproj", "{87B93C13-FF53-445C-B8E9-7AA65333CCFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet-Blazor.Web", "Dotnet-Blazor.Web\Dotnet-Blazor.Web.csproj", "{9529608F-7D9D-431D-9440-32875C3A041C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet-Blazor.Tests", "Dotnet-Blazor.Tests\Dotnet-Blazor.Tests.csproj", "{F09BF7F9-9D85-4761-8BBE-BA5A8C647E27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8829021-9B06-4786-9AED-26FBFD9842ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8829021-9B06-4786-9AED-26FBFD9842ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8829021-9B06-4786-9AED-26FBFD9842ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8829021-9B06-4786-9AED-26FBFD9842ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3054F33D-9439-4350-9B91-693BF0640178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3054F33D-9439-4350-9B91-693BF0640178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3054F33D-9439-4350-9B91-693BF0640178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3054F33D-9439-4350-9B91-693BF0640178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B93C13-FF53-445C-B8E9-7AA65333CCFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B93C13-FF53-445C-B8E9-7AA65333CCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B93C13-FF53-445C-B8E9-7AA65333CCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B93C13-FF53-445C-B8E9-7AA65333CCFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9529608F-7D9D-431D-9440-32875C3A041C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9529608F-7D9D-431D-9440-32875C3A041C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9529608F-7D9D-431D-9440-32875C3A041C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9529608F-7D9D-431D-9440-32875C3A041C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F09BF7F9-9D85-4761-8BBE-BA5A8C647E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F09BF7F9-9D85-4761-8BBE-BA5A8C647E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F09BF7F9-9D85-4761-8BBE-BA5A8C647E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F09BF7F9-9D85-4761-8BBE-BA5A8C647E27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
