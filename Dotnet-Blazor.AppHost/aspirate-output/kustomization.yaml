@@ -1,0 +1,13 @@
+namespace: dotnet-new
+
+resources:
+- cache
+- apiservice
+- webfrontend
+- namespace.yaml
+- dashboard.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+
