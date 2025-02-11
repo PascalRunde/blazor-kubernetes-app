@@ -1,0 +1,71 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webfrontend
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+  # cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - webfrontend.com
+      secretName: tls-webfrontend
+  rules:
+    - host: webfrontend.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: webfrontend
+                port:
+                  number: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webfrontend
+  labels:
+    app: webfrontend
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webfrontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: webfrontend
+    spec:
+      containers:
+        - name: webfrontend
+          image: localhost:5001/webfrontend:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+            - name: https
+              containerPort: 8443
+          envFrom:
+            - configMapRef:
+                name: webfrontend-env
+      terminationGracePeriodSeconds: 180
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webfrontend-env
+data:
+  OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
+  OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
+  OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY: "in_memory"
+  ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+  HTTP_PORTS: "8080"
+  ConnectionStrings__cache: "cache:6379"
+  services__apiservice__http__0: "http://apiservice:8080"
+  ASPNETCORE_URLS: "http://+:8080"
