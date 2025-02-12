@@ -16,10 +16,8 @@ spec:
     spec:
       containers:
       - env:
-        - name: DASHBOARD__OTLP__AUTHMODE
-          value: "ApiKey"
-        - name: DASHBOARD__OTLP__PRIMARYAPIKEY
-          value: "{My_APIKEY}"
+        - name: DOTNET_DASHBOARD_UNSECURED_ALLOW_ANONYMOUS
+          value: "true"
         image: '{{ .Values.images.aspiredashboard }}'
         name: aspire-dashboard
         ports:

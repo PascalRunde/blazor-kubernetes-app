@@ -1,3 +1,5 @@
+using OpenTelemetry.Exporter;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.

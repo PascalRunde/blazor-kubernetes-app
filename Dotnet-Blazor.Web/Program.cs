@@ -1,5 +1,6 @@
 using Dotnet_Blazor.Web;
 using Dotnet_Blazor.Web.Components;
+using OpenTelemetry.Exporter;
 
 var builder = WebApplication.CreateBuilder(args);
 
