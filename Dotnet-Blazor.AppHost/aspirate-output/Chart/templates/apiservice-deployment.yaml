@@ -1,10 +1,10 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apiservice
+  annotations: {}
   labels:
     app: apiservice
+  name: apiservice
 spec:
   minReadySeconds: 60
   replicas: 1
@@ -15,19 +15,21 @@ spec:
     type: Recreate
   template:
     metadata:
+      annotations: {}
       labels:
         app: apiservice
     spec:
       containers:
-      - name: apiservice
-        image: apiservice:latest
-        imagePullPolicy: IfNotPresent
-        ports:
-        - name: http
-          containerPort: 8080
-        - name: https
-          containerPort: 8443
+      - args: []
         envFrom:
         - configMapRef:
-            name: apiservice-env
+            name: apiservice
+        image: '{{ .Values.images.apiservice }}'
+        imagePullPolicy: IfNotPresent
+        name: apiservice
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8443
+          name: https
       terminationGracePeriodSeconds: 180

@@ -1,0 +1,5 @@
+images:
+  cache: docker.io/library/redis:7.4
+  apiservice: apiservice:latest
+  webfrontend: webfrontend:latest
+  aspiredashboard: mcr.microsoft.com/dotnet/aspire-dashboard:8.0
